@@ -1,5 +1,5 @@
 import java.util.List;
-public class Test {
+public class BookStoreTest {
     public static void main(String[] args) {
         System.out.println("** Starting  Simulation )f Our Bookstore **");
         Bookstore myBookstore = new Bookstore();
@@ -21,11 +21,11 @@ public class Test {
         System.out.println("\n** Removing Outdated Books, Current Year: 2025, Threshold: 5 years **");
         int currentYear = 2025;
         int outdatedThreshold = 5;
-        List<Book> removedBooks = myBookstore.removeAndReturnOutdatedBooks(currentYear, outdatedThreshold);
+        List<Books> removedBooks = myBookstore.removeAndReturnOutdatedBooks(currentYear, outdatedThreshold);
         if (!removedBooks.isEmpty()) {
             System.out.println("Removed " + removedBooks.size() + " books as outdated:");
-            for (Book book : removedBooks) {
-                System.out.println("* " + book.getTitle() + " (Published: " + book.getYearPublished() + ")");
+            for (Books book : removedBooks) {
+                System.out.println("* " + book.getTitle() + " (Published: " + book.getPublicationYear() + ")");
             }
         } else {
             System.out.println("No books outdated");
@@ -39,7 +39,7 @@ public class Test {
         } catch (IllegalArgumentException e) {
             System.out.println("Purchase failed for Datastruct: " + e.getMessage());
         }
-        testing demo
+        //testing demo
         try {
             double paid = myBookstore.buyBook("007", 1, null, null);
             System.out.printf("Successfully bought a Demo Book, Total paid: $%.2f\n", paid);

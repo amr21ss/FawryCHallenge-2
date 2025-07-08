@@ -1,3 +1,3 @@
-public interface sendEmail {
-    void ship(String emailAdress);
+public interface Emailable {
+    void sendEmail(String emailAdress);
 }

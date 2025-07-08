@@ -3,25 +3,25 @@ import java.util.Iterator;
 import java.util.List;
 
 public class Bookstore {
-    private List<Book> inventory;
+    private List<Books> inventory;
     public Bookstore() {
         this.inventory = new ArrayList<>();
     }
 
-    public void addBook(Book book) {
+    public void addBook(Books book) {
         if (book != null) {
             inventory.add(book);
-            System.out.println("The following book:" book.getTitle()+ "is added to inventory");
+            System.out.println("The following book:" + book.getTitle()+ "is added to inventory");
         } else {
             System.out.println("Error: Book not found!");
         }
     }
 
-    public List<Book> removeAndReturnOutdatedBooks(int currentYear, int outdatedThresholdYears) {
-        List<Book> outdatedBooks = new ArrayList<>();
-        Iterator<Book> iterator = inventory.iterator();
+    public List<Books> removeAndReturnOutdatedBooks(int currentYear, int outdatedThresholdYears) {
+        List<Books> outdatedBooks = new ArrayList<>();
+        Iterator<Books> iterator = inventory.iterator();
         while (iterator.hasNext()) {
-            Book book = iterator.next();
+            Books book = iterator.next();
             if (book.isOutdated(currentYear, outdatedThresholdYears)) {
                 outdatedBooks.add(book);
                 iterator.remove();
@@ -37,8 +37,8 @@ public class Bookstore {
             throw new IllegalArgumentException("Must be a positive number.");
         }
 
-        Book bookToBuy = null;
-        for (Book book : inventory) {
+        Books bookToBuy = null;
+        for (Books book : inventory) {
             if (book.getIsbn().equals(isbn)) {
                 bookToBuy = book;
                 break;
@@ -60,7 +60,7 @@ public class Bookstore {
                 throw new IllegalArgumentException("Shipping address requred.");
             }
 
-            paperBook.setQuantity(paperBook.getQuantity() - quantity); /
+            paperBook.setQuantity(paperBook.getQuantity() - quantity);
             totalAmount = paperBook.getPrice() * quantity;
             paperBook.ship(address);
             System.out.println("Bought " + quantity + " copies of " + paperBook.getTitle() + "'. Remaining stock: " + paperBook.getQuantity());

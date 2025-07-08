@@ -1,7 +1,7 @@
-public class EBook extends Book implements Emailable {
+public class EBook extends Books implements Emailable {
     private String fileType;
 
-    public Ebook(String isbn, String title, int publictionYear, double price, String fileType) {
+    public EBook(String isbn, String title, int publictionYear, double price, String fileType) {
         super(isbn, title, publictionYear, price);
         this.fileType = fileType;
     }
@@ -14,7 +14,7 @@ public class EBook extends Book implements Emailable {
 
     @Override
     public boolean isOutdated(int currentYear, int outdatedThreshold) {
-        int age = currentYear - getYearPublished();
+        int age = currentYear - getPublicationYear();
         return age > outdatedThreshold;
     }
 

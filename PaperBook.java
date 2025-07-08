@@ -1,4 +1,4 @@
-public class PaperBook extends Book implements Shippable {
+public class PaperBook extends Books implements Shippable {
     private int quantity;
 
     public PaperBook(String isbn, String title, int publictionYear, double price, int quantity) {
@@ -14,7 +14,7 @@ public class PaperBook extends Book implements Shippable {
 
     @Override
     public boolean isOutdated(int currentYear, int outdatedThreshold) {
-        int age = currentYear - getYearPublished();
+        int age = currentYear - getPublicationYear();
         return age > outdatedThreshold;
     }
 

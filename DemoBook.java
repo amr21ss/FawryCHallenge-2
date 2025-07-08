@@ -1,4 +1,4 @@
-public class DemoBook extends Book{
+public class DemoBook extends Books{
     //assuming that we are working by yearly demo
     private int demoDurationInYears ;
 
@@ -16,9 +16,9 @@ public class DemoBook extends Book{
     @Override
     //if old outdated or if demo phase ended
     public boolean isOutdated(int currentYear, int outdatedThresholdYears) {
-        int age = currentYear - getYearPublished();
+        int age = currentYear - getPublicationYear();
         int demoYears = demoDurationInYears;
-        int demoEndYear = getYearPublished() + demoYears;
+        int demoEndYear = getPublicationYear() + demoYears;
         return age > outdatedThresholdYears || currentYear > demoEndYear;
 
     }

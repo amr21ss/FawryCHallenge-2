@@ -1,22 +1,22 @@
 public abstract class Books {
-    protected String ISBN;
-    protected String name;
+    protected String isbn;
+    protected String title;
     protected int publicationYear;
     protected double price;
 
 
-    public Product(String isbn, String name, int publicationYear, double price) {
+    public Books(String isbn, String title, int publicationYear, double price) {
         this.isbn = isbn;
-        this.name = name;
-        this publicationYear = publicationYear;
+        this.title = title;
+        this.publicationYear = publicationYear;
         this.price = price;
     }
     public String getIsbn() {
         return isbn;
     }
 
-    public String getName() {
-        return name; }
+    public String getTitle() {
+        return title; }
 
     public int getPublicationYear() {
         return publicationYear;
