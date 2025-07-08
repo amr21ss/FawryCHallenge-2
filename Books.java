@@ -5,13 +5,12 @@ public abstract class Books {
     protected double price;
 
 
-    public Product(String ISBN, String name, int publicationYear, double price) {
-        this.ISBN = ISBN;
+    public Product(String isbn, String name, int publicationYear, double price) {
+        this.isbn = isbn;
         this.name = name;
         this publicationYear = publicationYear;
         this.price = price;
     }
-    //ProductsMethods
     public String getIsbn() {
         return isbn;
     }
