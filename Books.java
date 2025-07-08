@@ -23,8 +23,7 @@ public abstract class Books {
         return publicationYear;
     }
     public double getPrice() {
-        return price; }
-
-    public  abstract boolean isOutdated(currentYear);
-
+        return price;
+    }
+    public abstract boolean isOutdated(int currentYear, int outdatedThreshold);
 }
